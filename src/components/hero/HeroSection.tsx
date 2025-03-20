@@ -81,8 +81,18 @@ const HeroSection = ({ activeSection, onNavigate }: HeroSectionProps) => {
       onTouchEnd={handleTouchEnd}
     >
       <div className="relative h-full w-full overflow-hidden">
-        {/* Absolute positioned gradient background that's always present */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a3a4a] to-[#0f172a]"></div>
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 bg-[#0f172a]">
+          <div 
+            className="absolute inset-0 opacity-40 bg-blend-overlay"
+            style={{
+              backgroundImage: `url('/lovable-uploads/30350bba-90dc-46b7-be65-6012c9a6f63c.png')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a3a4a]/80 to-[#0f172a]/80" />
+        </div>
         
         {/* Content container */}
         <div className="relative z-10 container mx-auto h-full flex items-center justify-center">
