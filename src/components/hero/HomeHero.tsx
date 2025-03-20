@@ -1,52 +1,93 @@
 
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const HomeHero = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between w-full h-full px-4 md:px-8">
-      <div className="w-full lg:w-1/2 text-left mb-10 lg:mb-0">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black font-montserrat leading-tight mb-4">
-          Your Digital Growth Partner
-        </h1>
-        <p className="text-xl md:text-2xl text-cyberhand-text-gray font-roboto mb-8">
-          Scalable Web, Marketing, and AI Solutions for All Businesses
-        </p>
-        <Button className="bg-cyberhand-green hover:bg-cyberhand-green-light text-white px-8 py-6 rounded-md text-lg font-medium transform transition hover:scale-105">
-          Get Started
-        </Button>
-      </div>
-      <div className="w-full lg:w-1/2 relative">
-        <div className="relative rounded-lg overflow-hidden p-8 lg:p-16 bg-gradient-to-br from-gray-100 to-white shadow-lg">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzcuNSAzNy41bDI1IDAgMCAxMjUgMTI1IDAgMCAyNSAxMjUgMCAwIDc1LTI1IDAgMCAxMi41LTEyNSAwIDAgMTIuNS0xMjUgMCAwLTI1TDEyLjUgMjYyLjUgMTIuNSAxMzcuNWwwLTEwMCAyNSAwem0wIDB6IiBzdHJva2U9IiM5OTkiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==')]"></div>
-          <div className="relative z-10 flex flex-col gap-6">
-            <div className="flex gap-4 items-center">
-              <div className="bg-cyberhand-green bg-opacity-10 rounded-full p-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyberhand-green"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>
+    <div className="relative w-full h-full flex items-center">
+      {/* Gradient background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a3a4a] to-[#0f172a] z-0" />
+      
+      {/* Content container */}
+      <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left side - Main text content */}
+        <div className="px-4 md:px-8 lg:px-12 flex flex-col space-y-6">
+          <div className="flex">
+            <a href="#" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-6 py-2 text-sm text-white hover:bg-white/20 transition-colors">
+              SCHEDULE A CALL
+            </a>
+          </div>
+          
+          <p className="text-lg md:text-xl text-white/90 font-light max-w-md mt-4">
+            Our focus is leveraging PPC ads that deliver targeted traffic, increased conversions, and measurable ROI for your online storefront.
+          </p>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            Next-Generation<br />
+            Cutting-Edge<br />
+            Digital Creative
+          </h1>
+          
+          <div className="pt-4">
+            <Button 
+              className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-base flex items-center gap-2 h-auto"
+              onClick={() => {}}
+            >
+              Get Started
+              <ArrowRight className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+        
+        {/* Right side - Floating cards */}
+        <div className="hidden lg:flex flex-col gap-6 items-end px-12">
+          {/* First card - Stats */}
+          <div className="bg-gray-800/50 backdrop-blur-md rounded-xl p-6 w-full max-w-md border border-white/10 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
+            <div className="flex items-center space-x-4">
+              <div className="bg-blue-900/30 rounded-lg p-3">
+                <img 
+                  src="/lovable-uploads/78b2a460-f295-441a-ad77-b9b282b561ee.png" 
+                  alt="Stats graph" 
+                  className="w-32 h-24 object-cover rounded opacity-0"
+                />
               </div>
-              <div>
-                <h3 className="font-montserrat font-semibold text-lg">Web Development</h3>
-                <p className="text-cyberhand-text-gray text-sm">Starting at $399</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-center">
-              <div className="bg-blue-100 rounded-full p-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m8 18 3-3-3-3"/><path d="m13 12 3-3-3-3"/><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
-              </div>
-              <div>
-                <h3 className="font-montserrat font-semibold text-lg">AI Integration</h3>
-                <p className="text-cyberhand-text-gray text-sm">Starting at $499</p>
+              <div className="text-white">
+                <h3 className="text-lg font-semibold">Drive More Traffic</h3>
+                <p className="text-sm text-white/70">And Product Sales</p>
               </div>
             </div>
           </div>
-        </div>
-        <div className="absolute -bottom-4 -right-4 bg-white shadow-lg rounded-lg py-3 px-5 w-auto">
-          <div className="flex items-center gap-2">
-            <span className="text-5xl font-bold font-montserrat text-cyberhand-text-black">230+</span>
-            <span className="text-sm text-cyberhand-text-gray leading-tight">companies<br/>trust us</span>
+          
+          {/* Second card - Blog */}
+          <div className="bg-white rounded-xl p-6 w-full max-w-md shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
+            <div className="flex items-start">
+              <div className="flex-1">
+                <div className="flex items-center mb-3">
+                  <span className="bg-yellow-400 h-2 w-2 rounded-full mr-2"></span>
+                  <span className="text-sm font-medium text-gray-600">Blog</span>
+                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
+                  alt="Office space" 
+                  className="w-full h-36 object-cover rounded-lg mb-3"
+                />
+                <h3 className="text-lg font-bold text-gray-800">Maximizing ROI with PPC campaigns: Proven strategies for achieving success</h3>
+              </div>
+            </div>
+            <div className="flex justify-between items-center mt-4">
+              <button className="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-medium">
+                Read
+              </button>
+              <div className="text-sm text-gray-500">01 / 05</div>
+            </div>
+            <div className="flex items-center mt-2 text-xs text-gray-500">
+              <span className="mr-2">PPC</span>
+              <span>5 min read</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

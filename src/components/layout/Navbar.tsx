@@ -12,35 +12,63 @@ const Navbar = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 h-[50px] md:h-[60px] bg-white z-50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 h-[50px] md:h-[60px] bg-transparent z-50">
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center">
           {/* Logo */}
-          <div className="text-xl font-bold text-black">
+          <div className="text-xl font-bold text-white">
             <span className="font-montserrat">CyberHand</span>
           </div>
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {["Home", "Services", "AI Integration", "Our Work", "Packages", "Contact"].map((item) => (
+        <nav className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-6 text-white/70">
             <button
-              key={item}
-              className="text-cyberhand-text-black hover:text-cyberhand-green transition-colors font-montserrat text-sm"
-              onClick={() => handleNavClick(item)}
+              className="text-white/90 hover:text-white transition-colors text-sm"
+              onClick={() => handleNavClick("Services")}
             >
-              {item}
+              ALL SERVICES
             </button>
-          ))}
+            
+            <button
+              className="hover:text-white transition-colors text-sm"
+              onClick={() => handleNavClick("Services")}
+            >
+              GOOGLE ADS
+            </button>
+            
+            <button
+              className="hover:text-white transition-colors text-sm"
+              onClick={() => handleNavClick("Services")}
+            >
+              META ADS
+            </button>
+            
+            <button
+              className="hover:text-white transition-colors text-sm"
+              onClick={() => handleNavClick("Services")}
+            >
+              AMAZON ADS
+            </button>
+          </div>
+          
+          <button
+            className="text-white/90 hover:text-white transition-colors text-sm"
+            onClick={() => handleNavClick("Our Work")}
+          >
+            VIEW PORTFOLIO
+          </button>
         </nav>
 
         {/* Get Started Button - Desktop */}
         <div className="hidden md:block">
           <Button 
-            className="bg-cyberhand-green hover:bg-cyberhand-green-light text-white font-medium rounded-full px-6"
-            onClick={() => handleNavClick("Contact")}
+            variant="ghost"
+            className="text-white hover:text-white hover:bg-white/10 font-medium"
+            onClick={() => {}}
           >
-            Get Started
+            MENU
           </Button>
         </div>
 
@@ -51,6 +79,7 @@ const Navbar = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
+            className="text-white"
           >
             <Menu className="h-6 w-6" />
           </Button>
@@ -59,23 +88,17 @@ const Navbar = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white absolute top-[50px] left-0 right-0 shadow-md z-50">
+        <div className="md:hidden bg-[#1a3a4a]/90 backdrop-blur-md absolute top-[50px] left-0 right-0 shadow-md z-50 border-t border-white/10">
           <div className="px-4 py-2 space-y-3">
-            {["Home", "Services", "AI Integration", "Our Work", "Packages", "Contact"].map((item) => (
+            {["ALL SERVICES", "GOOGLE ADS", "META ADS", "AMAZON ADS", "VIEW PORTFOLIO"].map((item) => (
               <button
                 key={item}
-                className="block w-full text-left py-2 text-cyberhand-text-black hover:text-cyberhand-green transition-colors font-montserrat"
-                onClick={() => handleNavClick(item)}
+                className="block w-full text-left py-2 text-white/80 hover:text-white transition-colors"
+                onClick={() => handleNavClick(item === "ALL SERVICES" ? "Services" : item === "VIEW PORTFOLIO" ? "Our Work" : "Services")}
               >
                 {item}
               </button>
             ))}
-            <Button 
-              className="w-full bg-cyberhand-green hover:bg-cyberhand-green-light text-white font-medium rounded-full mt-2"
-              onClick={() => handleNavClick("Contact")}
-            >
-              Get Started
-            </Button>
           </div>
         </div>
       )}

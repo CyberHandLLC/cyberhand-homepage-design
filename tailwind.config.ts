@@ -72,6 +72,8 @@ export default {
 					'green-light': '#34D399',
 					yellow: '#FBBF24',
 					'bg-light': '#FFFFFF',
+					'bg-dark': '#0f172a',
+					'bg-dark-2': '#1a3a4a',
 					'bg-gray': '#E5E7EB',
 					'text-black': '#000000',
 					'text-gray': '#6B7280',
@@ -110,6 +112,10 @@ export default {
 				'fade-in': {
 					'0%': { opacity: '0' },
 					'100%': { opacity: '1' }
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				}
 			},
 			animation: {
@@ -117,7 +123,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'slide-in-right': 'slide-in-right 0.3s ease-out',
 				'slide-out-left': 'slide-out-left 0.3s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out'
+				'fade-in': 'fade-in 0.3s ease-out',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
 			}
 		}
 	},

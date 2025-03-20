@@ -73,9 +73,9 @@ const Index = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-white text-black">
+      <div className="min-h-screen bg-[#0f172a] text-white overflow-hidden">
         <Navbar onNavigate={handleNavigate} />
-        <main>
+        <main className="pt-[50px] md:pt-[60px] pb-[50px] md:pb-[60px] h-screen">
           <HeroSection activeSection={activeSection} onNavigate={handleNavigate} />
         </main>
         <Footer />

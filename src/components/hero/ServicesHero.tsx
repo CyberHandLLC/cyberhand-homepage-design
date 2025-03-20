@@ -10,12 +10,12 @@ const ServiceCard = ({
   title: string; 
   description: string;
 }) => (
-  <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-    <div className="bg-cyberhand-green bg-opacity-10 rounded-full p-4 inline-flex mb-4">
+  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 shadow-md border border-white/10 hover:bg-white/10 transition-all">
+    <div className="bg-cyberhand-green bg-opacity-20 rounded-full p-4 inline-flex mb-4">
       <Icon className="h-8 w-8 text-cyberhand-green" />
     </div>
-    <h3 className="text-xl font-montserrat font-semibold mb-2">{title}</h3>
-    <p className="text-cyberhand-text-gray font-roboto">{description}</p>
+    <h3 className="text-xl font-montserrat font-semibold mb-2 text-white">{title}</h3>
+    <p className="text-white/70 font-roboto">{description}</p>
   </div>
 );
 
@@ -46,8 +46,8 @@ const ServicesHero = () => {
   return (
     <section className="w-full">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-cyberhand-text-black font-montserrat mb-4">Our Services</h2>
-        <p className="text-cyberhand-text-gray font-roboto max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-white font-montserrat mb-4">Our Services</h2>
+        <p className="text-white/70 font-roboto max-w-2xl mx-auto">
           Comprehensive digital solutions to power your business growth
         </p>
       </div>
