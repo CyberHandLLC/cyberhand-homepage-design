@@ -16,13 +16,8 @@ const Navbar = ({ onNavigate }: { onNavigate: (section: string) => void }) => {
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center">
           {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/6ea9a702-91a0-4ba2-883e-ea6db5a6a940.png" 
-              alt="CyberHand Logo" 
-              className="h-8 md:h-10 mr-2"
-            />
-            <span className="font-montserrat text-xl font-bold text-white">CyberHand</span>
+          <div className="text-xl font-bold text-white">
+            <span className="font-montserrat">CyberHand</span>
           </div>
         </div>
         

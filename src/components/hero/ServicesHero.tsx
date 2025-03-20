@@ -10,9 +10,9 @@ const ServiceCard = ({
   title: string; 
   description: string;
 }) => (
-  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 shadow-md border border-[#10B981]/20 hover:border-[#10B981]/40 hover:bg-white/10 transition-all">
-    <div className="bg-[#10B981]/20 rounded-full p-4 inline-flex mb-4">
-      <Icon className="h-8 w-8 text-[#10B981]" />
+  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 shadow-md border border-white/10 hover:bg-white/10 transition-all">
+    <div className="bg-cyberhand-green bg-opacity-20 rounded-full p-4 inline-flex mb-4">
+      <Icon className="h-8 w-8 text-cyberhand-green" />
     </div>
     <h3 className="text-xl font-montserrat font-semibold mb-2 text-white">{title}</h3>
     <p className="text-white/70 font-roboto">{description}</p>
@@ -46,13 +46,6 @@ const ServicesHero = () => {
   return (
     <section className="w-full">
       <div className="text-center mb-12">
-        <div className="flex justify-center mb-4">
-          <img 
-            src="/lovable-uploads/fb33df85-354d-4442-b02f-d1e6ce32fe98.png" 
-            alt="CyberHand Icon" 
-            className="h-12 md:h-16"
-          />
-        </div>
         <h2 className="text-3xl md:text-4xl font-bold text-white font-montserrat mb-4">Our Services</h2>
         <p className="text-white/70 font-roboto max-w-2xl mx-auto">
           Comprehensive digital solutions to power your business growth
