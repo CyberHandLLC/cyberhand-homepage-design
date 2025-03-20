@@ -1,13 +1,86 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import HeroSection from "@/components/hero/HeroSection";
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState("Home");
+
+  // Handle section navigation
+  const handleNavigate = (section: string) => {
+    setActiveSection(section);
+  };
+
+  // Add schema markup for SEO
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CyberHand",
+    "description": "Digital Growth Partner – Web, Marketing, AI Solutions",
+    "url": "https://cyberhand.com",
+    "logo": "https://cyberhand.com/logo.png",
+    "sameAs": [
+      "https://twitter.com/cyberhand",
+      "https://www.linkedin.com/company/cyberhand",
+      "https://www.facebook.com/cyberhand"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-123-456-7890",
+      "contactType": "customer service",
+      "email": "info@cyberhand.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Digital Avenue",
+      "addressLocality": "Tech City",
+      "postalCode": "12345",
+      "addressCountry": "USA"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Web Development",
+          "description": "Custom websites from one-page landing sites to e-commerce platforms",
+          "price": "399",
+          "priceCurrency": "USD",
+          "url": "https://cyberhand.com/services#web-development"
+        },
+        {
+          "@type": "Offer",
+          "name": "Marketing Services",
+          "description": "Google Ads, SEO, and social media management",
+          "price": "49",
+          "priceCurrency": "USD",
+          "url": "https://cyberhand.com/services#marketing"
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>CyberHand | Digital Growth Partner – Web, Marketing, AI Solutions</title>
+        <meta name="description" content="CyberHand offers scalable web development, marketing, cloud hosting, and AI integration solutions for businesses of all sizes. Start your digital growth journey today!" />
+        <meta name="keywords" content="web development, digital marketing, AI integration, cloud hosting, SEO services, CyberHand" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      </Helmet>
+
+      <div className="min-h-screen bg-white text-black">
+        <Navbar onNavigate={handleNavigate} />
+        <main>
+          <HeroSection activeSection={activeSection} onNavigate={handleNavigate} />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
